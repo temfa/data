@@ -41,6 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/style.css" rel="stylesheet" type="text/css" />
     <!-- custom css -->
     <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/all.css" rel="stylesheet" />
     <!-- fontawesome css -->
     <!-- //css files -->
 
@@ -121,8 +122,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <input class="form-control" type="text" name="Name" placeholder="Name" required="" />
                 <input class="form-control" type="email" name="Email" placeholder="Email" required="" />
                 <input class="form-control" type="text" name="Number" placeholder="Phone Number" required="" />
-                <input class="form-control" type="password" name="Number" placeholder="Password" required="" />
-                <input class="form-control" type="password" name="Number" placeholder="Confirm Password" required="" />
+                <div>
+                  <input class="form-control" type="password" name="Number" placeholder="Password" required="" id="password" />
+                  <i class="fa-solid fa-eye-slash" id="eye"></i>
+                </div>
                 <input class="form-control text-capitalize" type="submit" value="Register Account" />
               </form>
             </div>
@@ -964,7 +967,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
           <div class="modal-body">
             <div class="login px-4 mx-auto mw-100">
               <h5 class="text-center mb-4">Login Now</h5>
-              <form action="#" method="post">
+              <form id="login">
                 <div class="form-group">
                   <label class="mb-2">Email address</label>
                   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="" />
@@ -1008,6 +1011,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- testimonials  Responsiveslides -->
     <script src="js/responsiveslides.min.js"></script>
     <script>
+      let eye = document.getElementById("eye");
+      let password = document.getElementById("password");
+      let login = document.getElementById("login");
+
+      eye.addEventListener("click", () => {
+        if (password.type === "password") {
+          password.type = "text";
+          eye.classList.remove("fa-eye-slash");
+          eye.classList.add("fa-eye");
+        } else if (password.type === "text") {
+          password.type = "password";
+          eye.classList.add("fa-eye-slash");
+          eye.classList.remove("fa-eye");
+        } else {
+          password.type = "password";
+          eye.classList.add("fa-eye-slash");
+          eye.classList.remove("fa-eye");
+        }
+      });
+      login.addEventListener("submit", (e) => {
+        e.preventDefault();
+        window.location.href = "dashboard.html";
+      });
+    </script>
+    <script>
       // You can also use"$(window).load(function() {"
       $(function () {
         // Slideshow 4
@@ -1039,14 +1067,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         });
 
         //Click Logo To Scroll To Top
-        $("#logo").on("click", () => {
-          $("html,body").animate(
-            {
-              scrollTop: 0,
-            },
-            500
-          );
-        });
+        // $("#logo").on("click", () => {
+        //   $("html,body").animate(
+        //     {
+        //       scrollTop: 0,
+        //     },
+        //     500
+        //   );
+        // });
 
         /*
 		  //Smooth Scrolling Using Navigation Menu

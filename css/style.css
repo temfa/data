@@ -68,10 +68,10 @@ ul {
 
 /*** Header Styles ***/
 
-header.index-banner {
-  /* width: 100vw; 
-  height: 100vh;*/
-}
+/* header .index-banner {
+  width: 100vw; 
+  height: 100vh;
+} */
 
 button.btn.w3ls-btn {
   padding: 8px 29px;
@@ -256,6 +256,7 @@ div#word-mark h1 a {
   -moz-background-size: cover;
   -o-background-size: cover;
   -ms-background-size: cover;
+  background-size: cover;
   min-height: 350px;
 }
 
@@ -468,6 +469,24 @@ h3.txt-w3_agile {
 .banner-form h5 i {
   font-size: 20px;
 }
+
+.banner-form div {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e6eae8;
+  margin-bottom: 0.8em;
+  padding-right: 1em;
+}
+
+.banner-form div input {
+  border: none !important;
+  margin-bottom: 0px !important;
+}
+
+.banner-form div i {
+  color: white;
+}
+
 .banner-form input[type="text"],
 .banner-form input[type="email"],
 .banner-form input[type="password"] {
@@ -477,7 +496,8 @@ h3.txt-w3_agile {
   font-size: 16px;
   padding: 0.8em 1em;
   border: 1px solid #e6eae8;
-  -webkit-appearance: none;
+  /* -webkit-appearance: none; */
+  appearance: none;
   margin-bottom: 0.8em;
   letter-spacing: 1px;
   background: none;
@@ -688,7 +708,7 @@ h3.heading {
   letter-spacing: 0;
   line-height: 50px;
   width: 80%;
-  float: left;
+  /* float: left; */
 }
 .quote a {
   background: #00bcd4;
@@ -1308,6 +1328,7 @@ ul.callbacks_tabs {
 
 .rslides li {
   -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   position: absolute;
   display: none;
   left: 0%;
